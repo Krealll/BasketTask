@@ -27,8 +27,8 @@ public class BasketServiceTest {
         ballList.add(new Ball(Color.RED,16.002));
         ballList.add(new Ball(Color.GREEN,177.43));
         ballList.add(new Ball(Color.BLUE,111.56));
-        Basket actualBasket = new Basket(new ArrayList<>(),0);
-        assertTrue(basketService.fillBasket(actualBasket,ballList));
+        Basket basket = new Basket(new ArrayList<>(),0,20,1000.0);
+        assertTrue(basketService.fillBasket(basket,ballList));
     }
 
     @Test
@@ -38,13 +38,13 @@ public class BasketServiceTest {
         ballList.add(new Ball(Color.RED,16.002));
         ballList.add(new Ball(Color.GREEN,177.43));
         ballList.add(new Ball(Color.BLUE,111.56));
-        Basket actualBasket = new Basket(new ArrayList<>(),0);
-        assertFalse(basketService.fillBasket(actualBasket,ballList));
+        Basket basket = new Basket(new ArrayList<>(),0,20,1000.0);
+        assertFalse(basketService.fillBasket(basket,ballList));
     }
 
     @Test
     public void GetBallsNumOfColorPosTest() {
-        Basket basket = new Basket(new ArrayList<>(),0);
+        Basket basket = new Basket(new ArrayList<>(),0,20,1000.0);
         basket.add(new Ball(Color.RED,10.0));
         basket.add(new Ball(Color.RED,20.0));
         basket.add(new Ball(Color.BLUE,13.0));
@@ -54,7 +54,7 @@ public class BasketServiceTest {
 
     @Test
     public void GetBallsNumOfColorStreamAPIPosTest() {
-        Basket basket = new Basket(new ArrayList<>(),0);
+        Basket basket = new Basket(new ArrayList<>(),0,20,1000.0);
         basket.add(new Ball(Color.RED,10.0));
         basket.add(new Ball(Color.RED,20.0));
         basket.add(new Ball(Color.BLUE,13.0));

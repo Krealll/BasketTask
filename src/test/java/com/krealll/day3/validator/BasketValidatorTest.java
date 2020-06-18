@@ -24,7 +24,7 @@ public class BasketValidatorTest {
     public void IsOkWeightPosTest() {
         List<Ball> ballList = new ArrayList<>();
         ballList.add(new Ball(Color.ORANGE,20.0));
-        Basket basket = new Basket(ballList,20.0);
+        Basket basket = new Basket(ballList,20.0,20,1000.0);
         assertTrue(basketValidator.isOkWeight(basket));
     }
 
@@ -32,7 +32,7 @@ public class BasketValidatorTest {
     public void IsOkWeightNegTest() {
         List<Ball> ballList = new ArrayList<>();
         ballList.add(new Ball(Color.ORANGE,99999.0));
-        Basket basket = new Basket(ballList,99999.0);
+        Basket basket = new Basket(ballList,99999.0,20,1000.0);
         assertFalse(basketValidator.isOkWeight(basket));
     }
 
@@ -44,7 +44,7 @@ public class BasketValidatorTest {
             ballList.add(new Ball(Color.ORANGE,20.0));
             weight+=20.0;
         }
-        Basket basket = new Basket(ballList,weight);
+        Basket basket = new Basket(ballList,weight,20,1000.0);
         assertTrue(basketValidator.isOkCapacity(basket));
     }
 
@@ -56,7 +56,7 @@ public class BasketValidatorTest {
             ballList.add(new Ball(Color.ORANGE,20.0));
             weight+=20.0;
         }
-        Basket basket = new Basket(ballList,weight);
+        Basket basket = new Basket(ballList,weight,20,1000.0);
         assertFalse(basketValidator.isOkCapacity(basket));
     }
 }

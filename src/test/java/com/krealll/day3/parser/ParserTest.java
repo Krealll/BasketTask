@@ -23,7 +23,7 @@ public class ParserTest {
     public void ToBasketValuePosTest() {
         try{
             String testString = "Basket:\nRed 1.32\nBlue 55.88\n";
-            Basket expectedBasket = new Basket(new ArrayList<>(),0),
+            Basket expectedBasket = new Basket(new ArrayList<>(),0,20,1000.0),
                     actualBasket;
             expectedBasket.add(new Ball(Color.RED,1.32));
             expectedBasket.add(new Ball(Color.BLUE,55.88));

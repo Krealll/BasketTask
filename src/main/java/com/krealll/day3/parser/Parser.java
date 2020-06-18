@@ -33,7 +33,7 @@ public class Parser {
                     currentWeight += tempBall.getWeight();
                     ballList.add(tempBall);
                 }
-                return new Basket(ballList,currentWeight);
+                return new Basket(ballList,currentWeight,100,1000.0);
             }
                 throw new ParseException("Bad basket string");
         }catch (NumberFormatException e){

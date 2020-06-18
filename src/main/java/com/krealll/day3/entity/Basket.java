@@ -3,15 +3,24 @@ package com.krealll.day3.entity;
 import java.util.List;
 
 public class Basket {
-    public final static int MAX_BALL_CAPACITY = 20;
-    public final static double MAX_CONTAINING_WEIGHT = 1000.0;
-
+    public final int maxCapacity;
+    public final double maxWeight;
     private List<Ball> balls;
     private double currentWeight;
 
-    public Basket(List<Ball> balls, double currentWeight) {
+    public Basket(List<Ball> balls, double currentWeight,int maxBasketCapacity, double maxBasketWeight) {
         this.balls = balls;
         this.currentWeight = currentWeight;
+        maxCapacity=maxBasketCapacity;
+        maxWeight=maxBasketWeight;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
     }
 
     public double getCurrentWeight() {
@@ -28,8 +37,8 @@ public class Basket {
 
     public boolean add(Ball ball) {
         if (ball==null
-                ||balls.size()==MAX_BALL_CAPACITY
-                ||(currentWeight+ball.getWeight())>MAX_CONTAINING_WEIGHT)
+                ||balls.size()==maxCapacity
+                ||(currentWeight+ball.getWeight())>maxWeight)
             return false;
         currentWeight+=ball.getWeight();
         return balls.add(ball);
